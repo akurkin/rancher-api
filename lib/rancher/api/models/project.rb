@@ -5,6 +5,7 @@ module Rancher
 
       has_many :machines
       has_many :environments
+      has_many :services
     end
   end
 end

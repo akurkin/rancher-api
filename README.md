@@ -35,6 +35,17 @@ Rancher v0.32.0
 
 Configure Rancher::Api first by providing url, access and secret keys:
 
+### Entities
+
+**Project** - Top level object that represents "Environment" in Rancher UI
+**Service** - Service (combines containers from the same image)
+**Machine** - Physical docker hosts
+**Instance** - represents containers that were ever installed via Rancher. Better to query containers as nested resource, cuz there can be thousands of containers that were running before and still available to query via API. Removed containers are marked as 'removed' respectively.
+**Environment** - In rancher UI these are known as **Stack**, though in API they are **environments**. We're sticking to API resource name.
+**Host** - these are hosts, with detailed information about docker installation and resources
+
+### Setup
+
 ```ruby
 Rancher::Api.configure do |config|
   config.url = 'http://127.0.0.1:8080/v1/'
@@ -43,7 +54,7 @@ Rancher::Api.configure do |config|
 end
 ```
 
-## Querying
+### Querying
 
 Now, you're able to query entities like this:
 
@@ -52,7 +63,7 @@ project = Rancher::Api::Project.all.to_a
 machine = Rancher::Api::Machine.find('1ph1')
 ```
 
-## Creating new machines
+### Creating new machines
 Creating new machine using **Digital Ocean** driver:
 
 ```ruby
@@ -73,7 +84,7 @@ new_machine.save
 **NOTICE**: First specify driver, so that driver_config= accessor can correctly map config on the right attribute. I.e. for 'digitalocean' config attribute is 'digitaloceanConfig'.
 
 
-## Executing shell commands in containers
+### Executing shell commands in containers
 
 ```ruby
 container = Rancher::Api::Instance.find('1i382')
