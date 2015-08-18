@@ -40,6 +40,8 @@ module Rancher
             end
           end
 
+          self.response = self.response.join
+
           self
         end
       end

@@ -43,14 +43,16 @@ Rancher::Api.configure do |config|
 end
 ```
 
+## Querying
+
 Now, you're able to query entities like this:
 
 ```ruby
-project = Rancher::Api::Project.all.to_a.first
-
+project = Rancher::Api::Project.all.to_a
 machine = Rancher::Api::Machine.find('1ph1')
 ```
 
+## Creating new machines
 Creating new machine using **Digital Ocean** driver:
 
 ```ruby
@@ -69,6 +71,14 @@ new_machine.save
 ```
 
 **NOTICE**: First specify driver, so that driver_config= accessor can correctly map config on the right attribute. I.e. for 'digitalocean' config attribute is 'digitaloceanConfig'.
+
+
+## Executing shell commands in containers
+
+```ruby
+container = Rancher::Api::Instance.find('1i382')
+puts container.execute('whoami').response
+```
 
 ## Development
 

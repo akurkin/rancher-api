@@ -33,15 +33,15 @@ module Rancher
       # Content-Length: 112
 
       # {
-      #   "attachStdin": false,
-      #   "attachStdout": false,
+      #   "attachStdin": true,
+      #   "attachStdout": true,
       #   "command": [
       #     "rake",
       #     "db:create",
       #     "db:schema:load",
       #     "db:seed"
       #   ],
-      #   "tty": false
+      #   "tty": true
       # }
 
       def execute(command)
