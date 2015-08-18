@@ -30,32 +30,38 @@ Or install it yourself as:
 
 Configure Rancher::Api first by providing url, access and secret keys:
 
-    Rancher::Api.configure do |config|
-      config.url = 'http://127.0.0.1:8080/v1/'
-      config.access_key = '8604A1FC8C108BAFB1E3'
-      config.secret_key = '4BhuyyyAaaaaBbbbi7yaZzzAaa3y13pC6D7e569'
-    end
+```ruby
+Rancher::Api.configure do |config|
+  config.url = 'http://127.0.0.1:8080/v1/'
+  config.access_key = '8604A1FC8C108BAFB1E3'
+  config.secret_key = '4BhuyyyAaaaaBbbbi7yaZzzAaa3y13pC6D7e569'
+end
+```
 
 Now, you're able to query entities like this:
 
-    project = Rancher::Api::Project.all.to_a.first
-    
-    machine = Rancher::Api::Machine.find('1ph1')
+```ruby
+project = Rancher::Api::Project.all.to_a.first
+
+machine = Rancher::Api::Machine.find('1ph1')
+```
 
 Creating new machine using **Digital Ocean** driver:
 
-    project = Rancher::Api::Project.all.to_a.first
-    
-    new_machine = project.machines.build
-    new_machine.driver = Rancher::Api::Machine::DIGITAL_OCEAN
-    new_machine.driver_config = Rancher::Api::Machine::DriverConfig.new(
-        accessToken: 'xyz',
-        size: '1gb',
-        region: 'ams3',
-        image: 'ubuntu-14-04-x64'
-    )
-    
-    new_machine.save
+```ruby
+project = Rancher::Api::Project.all.to_a.first
+
+new_machine = project.machines.build
+new_machine.driver = Rancher::Api::Machine::DIGITAL_OCEAN
+new_machine.driver_config = Rancher::Api::Machine::DriverConfig.new(
+    accessToken: 'xyz',
+    size: '1gb',
+    region: 'ams3',
+    image: 'ubuntu-14-04-x64'
+)
+
+new_machine.save
+```
 
 **NOTICE**: First specify driver, so that driver_config= accessor can correctly map config on the right attribute. I.e. for 'digitalocean' config attribute is 'digitaloceanConfig'.
 
