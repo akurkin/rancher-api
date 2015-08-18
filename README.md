@@ -26,6 +26,11 @@ Or install it yourself as:
 
     $ gem install rancher-api
 
+## Rancher Version
+
+Tested with:
+Rancher v0.32.0
+
 ## Usage
 
 Configure Rancher::Api first by providing url, access and secret keys:
