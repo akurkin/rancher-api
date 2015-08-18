@@ -4,6 +4,7 @@ module Rancher
       include Her::Model
 
       has_many :machines
+      has_many :environments
     end
   end
 end

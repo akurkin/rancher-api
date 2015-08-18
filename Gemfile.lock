@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rancher-api (0.2.0)
+    rancher-api (0.3.0)
       faraday_middleware
       faye-websocket
       her (~> 0.7.6)
