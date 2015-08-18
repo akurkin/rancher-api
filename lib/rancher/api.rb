@@ -1,3 +1,4 @@
+require 'faraday_middleware'
 require 'her'
 
 require 'rancher/api/configuration'
@@ -23,8 +24,9 @@ module Rancher
 
       Her::API.setup url: configuration.url do |c|
         # Request
+        c.request :json
+
         c.use Her::Middleware::AcceptJSON
-        c.use Faraday::Request::UrlEncoded
         c.use Faraday::Request::BasicAuthentication, configuration.access_key, configuration.secret_key
 
         # Response
