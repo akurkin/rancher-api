@@ -51,7 +51,7 @@ module Rancher
           'attachStdin' => true,
           'attachStdout' => true,
           'command' => command,
-          'tty': true
+          'tty' => true
         }
 
         action = Action.post(url, data)
