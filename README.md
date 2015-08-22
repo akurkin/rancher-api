@@ -56,6 +56,8 @@ Configure Rancher::Api first by providing url, access and secret keys:
 ### Setup
 
 ```ruby
+require 'rancher/api'
+
 Rancher::Api.configure do |config|
   config.url = 'http://127.0.0.1:8080/v1/'
   config.access_key = '8604A1FC8C108BAFB1E3'
