@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/environments/1e7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 09:19:37 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/schemas
+      Content-Length:
+      - '380'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"1e7","type":"environment","links":{"self":"http://192.168.99.100:8080/v1/environments/1e7","account":"http://192.168.99.100:8080/v1/environments/1e7/account","services":"http://192.168.99.100:8080/v1/environments/1e7/services","composeConfig":"http://192.168.99.100:8080/v1/environments/1e7/composeconfig"},"actions":{"update":"http://192.168.99.100:8080/v1/environments/1e7/?action=update","remove":"http://192.168.99.100:8080/v1/environments/1e7/?action=remove","activateservices":"http://192.168.99.100:8080/v1/environments/1e7/?action=activateservices","deactivateservices":"http://192.168.99.100:8080/v1/environments/1e7/?action=deactivateservices","exportconfig":"http://192.168.99.100:8080/v1/environments/1e7/?action=exportconfig"},"name":"hub","state":"active","accountId":"1a5","created":"2015-08-16T11:27:45Z","createdTS":1439724465000,"description":"Private
+        Docker Distribution service","kind":"environment","removed":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"uuid":"fb307133-7bd0-45c9-933c-03b4d8ea83ba"}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 09:19:37 GMT
+recorded_with: VCR 2.9.3

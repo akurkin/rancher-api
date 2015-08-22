@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/projects/1a5/environments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 09:06:03 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/projects/1a5/schemas
+      Content-Length:
+      - '703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"collection","resourceType":"environment","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5/environments"},"createTypes":{},"actions":{},"data":[{"id":"1e6","type":"environment","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6","account":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/account","services":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/services","composeConfig":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/composeconfig"},"actions":{"update":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/?action=update","remove":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/?action=remove","activateservices":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/?action=activateservices","deactivateservices":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/?action=deactivateservices","exportconfig":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e6/?action=exportconfig"},"name":"quotes","state":"active","accountId":"1a5","created":"2015-08-14T17:15:11Z","createdTS":1439572511000,"description":null,"kind":"environment","removed":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"uuid":"6682237a-0031-4fb1-8450-41781a9022ac"},{"id":"1e7","type":"environment","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7","account":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/account","services":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/services","composeConfig":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/composeconfig"},"actions":{"update":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/?action=update","remove":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/?action=remove","activateservices":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/?action=activateservices","deactivateservices":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/?action=deactivateservices","exportconfig":"http://192.168.99.100:8080/v1/projects/1a5/environments/1e7/?action=exportconfig"},"name":"hub","state":"active","accountId":"1a5","created":"2015-08-16T11:27:45Z","createdTS":1439724465000,"description":"Private
+        Docker Distribution service","kind":"environment","removed":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"uuid":"fb307133-7bd0-45c9-933c-03b4d8ea83ba"}],"sortLinks":{"accountId":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=accountId","created":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=created","description":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=description","id":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=id","kind":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=kind","name":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=name","removeTime":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=removeTime","removed":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=removed","state":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=state","uuid":"http://192.168.99.100:8080/v1/projects/1a5/environments?sort=uuid"},"pagination":{"first":null,"previous":null,"next":null,"limit":100,"total":null,"partial":false},"sort":null,"filters":{"accountId":null,"created":null,"description":null,"id":null,"kind":null,"name":null,"removeTime":null,"removed":null,"state":null,"uuid":null},"createDefaults":{}}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 09:06:03 GMT
+recorded_with: VCR 2.9.3

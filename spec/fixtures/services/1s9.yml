@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/services/1s9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 13:33:42 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/schemas
+      Content-Length:
+      - '716'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"1s9","type":"loadBalancerService","links":{"self":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9","account":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/account","consumedbyservices":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/consumedbyservices","consumedservices":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/consumedservices","environment":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/environment","instances":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/instances","loadBalancerConfigs":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/loadbalancerconfigs","loadBalancerListeners":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/loadbalancerlisteners","loadBalancers":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/loadbalancers","serviceExposeMaps":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/serviceexposemaps"},"actions":{"upgrade":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=upgrade","update":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=update","remove":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=remove","setservicelinks":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=setservicelinks","removeservicelink":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=removeservicelink","addservicelink":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=addservicelink","deactivate":"http://192.168.99.100:8080/v1/loadbalancerservices/1s9/?action=deactivate"},"name":"lb","state":"active","accountId":"1a5","created":"2015-08-14T19:34:25Z","createdTS":1439580865000,"description":null,"environmentId":"1e6","kind":"loadBalancerService","launchConfig":{"startOnCreate":true,"publishAllPorts":false,"privileged":false,"stdinOpen":true,"tty":true,"readOnly":false,"networkMode":"managed","environment":{},"restartPolicy":{"name":"always"},"labels":{},"ports":["80:3000"],"expose":[],"count":null,"description":null,"hostname":null,"volumeDriver":null,"workingDir":null,"user":null,"domainName":null,"memorySwap":null,"memory":null,"cpuSet":null,"cpuShares":null,"pidMode":null},"loadBalancerConfig":{"healthCheck":null,"appCookieStickinessPolicy":null,"lbCookieStickinessPolicy":null,"name":"lb
+        config","description":null},"removed":null,"scale":1,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"upgrade":null,"uuid":"3ff8bcc5-8acc-473b-beb4-028389201f92"}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 13:33:42 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/projects/1a5/machines
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 09:37:48 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/projects/1a5/schemas
+      Content-Length:
+      - '977'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"collection","resourceType":"machine","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5/machines"},"createTypes":{},"actions":{},"data":[{"id":"1ph1","type":"machine","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph1","account":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph1/account","hosts":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph1/hosts","config":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph1/config"},"actions":{"update":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph1/?action=update","remove":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph1/?action=remove"},"name":"quotes","state":"active","accountId":"1a5","amazonec2Config":null,"authCertificateAuthority":null,"authKey":null,"azureConfig":null,"created":"2015-08-14T17:05:23Z","createdTS":1439571923000,"description":null,"digitaloceanConfig":{"accessToken":"c363b574c17d1eaeab8d81d29fa86ec6681adc82fa578e4b02a570049f72811c","size":"1gb","region":"ams3","image":"ubuntu-14-04-x64"},"driver":"digitalocean","exoscaleConfig":null,"externalId":"0a541ada-3aaa-40f2-9c7b-d25e7e46a19b","kind":"machine","labels":{},"openstackConfig":null,"packetConfig":null,"rackspaceConfig":null,"removed":null,"softlayerConfig":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"uuid":"90b55c6e-0413-42f5-8152-d1e1f293f252","virtualboxConfig":null,"vmwarevcloudairConfig":null,"vmwarevsphereConfig":null},{"id":"1ph5","type":"machine","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph5","account":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph5/account","hosts":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph5/hosts","config":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph5/config"},"actions":{"update":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph5/?action=update","remove":"http://192.168.99.100:8080/v1/projects/1a5/machines/1ph5/?action=remove"},"name":"hub","state":"active","accountId":"1a5","amazonec2Config":null,"authCertificateAuthority":null,"authKey":null,"azureConfig":null,"created":"2015-08-15T14:55:19Z","createdTS":1439650519000,"description":"Private
+        Docker Distribution","digitaloceanConfig":{"accessToken":"c363b574c17d1eaeab8d81d29fa86ec6681adc82fa578e4b02a570049f72811c","size":"2gb","region":"ams3","image":"ubuntu-14-04-x64","privateNetworking":false},"driver":"digitalocean","exoscaleConfig":null,"externalId":"b6fef9f3-919c-444e-9201-76891ec3522d","kind":"machine","labels":{},"openstackConfig":null,"packetConfig":null,"rackspaceConfig":null,"removed":null,"softlayerConfig":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"uuid":"d4455a6c-8369-4aa3-ac6e-e96231cbba78","virtualboxConfig":null,"vmwarevcloudairConfig":null,"vmwarevsphereConfig":null}],"sortLinks":{"accountId":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=accountId","agentId":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=agentId","created":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=created","description":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=description","externalId":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=externalId","id":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=id","kind":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=kind","name":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=name","removeTime":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=removeTime","removed":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=removed","state":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=state","uuid":"http://192.168.99.100:8080/v1/projects/1a5/machines?sort=uuid"},"pagination":{"first":null,"previous":null,"next":null,"limit":100,"total":null,"partial":false},"sort":null,"filters":{"accountId":null,"agentId":null,"created":null,"description":null,"externalId":null,"id":null,"kind":null,"name":null,"removeTime":null,"removed":null,"state":null,"uuid":null},"createDefaults":{}}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 09:37:48 GMT
+recorded_with: VCR 2.9.3
