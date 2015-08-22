@@ -1,5 +1,9 @@
 # Rancher::Api
 
+[![Gem Version](https://badge.fury.io/rb/rancher-api.svg)](http://badge.fury.io/rb/rancher-api)
+![Downloads](http://ruby-gem-downloads-badge.herokuapp.com/rancher-api)
+
+
 [![Circle CI](https://circleci.com/gh/akurkin/rancher-api/tree/master.svg?style=svg)](https://circleci.com/gh/akurkin/rancher-api/tree/master)
 [![Code Climate](https://codeclimate.com/github/akurkin/rancher-api/badges/gpa.svg)](https://codeclimate.com/github/akurkin/rancher-api)
 [![Test Coverage](https://codeclimate.com/github/akurkin/rancher-api/badges/coverage.svg)](https://codeclimate.com/github/akurkin/rancher-api/coverage)
