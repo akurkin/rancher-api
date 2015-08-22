@@ -1,5 +1,6 @@
 # Rancher::Api
 
+[![Circle CI](https://circleci.com/gh/akurkin/rancher-api/tree/master.svg?style=svg)](https://circleci.com/gh/akurkin/rancher-api/tree/master)
 [![Code Climate](https://codeclimate.com/github/akurkin/rancher-api/badges/gpa.svg)](https://codeclimate.com/github/akurkin/rancher-api)
 [![Test Coverage](https://codeclimate.com/github/akurkin/rancher-api/badges/coverage.svg)](https://codeclimate.com/github/akurkin/rancher-api/coverage)
 
