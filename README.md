@@ -44,14 +44,20 @@ Rancher v0.32.0
 
 Configure Rancher::Api first by providing url, access and secret keys:
 
-### Entities
+### Classes
 
-**Project** - Top level object that represents "Environment" in Rancher UI
-**Service** - Service (combines containers from the same image)
-**Machine** - Physical docker hosts
-**Instance** - represents containers that were ever installed via Rancher. Better to query containers as nested resource, cuz there can be thousands of containers that were running before and still available to query via API. Removed containers are marked as 'removed' respectively.
-**Environment** - In rancher UI these are known as **Stack**, though in API they are **environments**. We're sticking to API resource name.
-**Host** - these are hosts, with detailed information about docker installation and resources
+- **Project**
+Top level object that represents "Environment" in Rancher UI
+- **Service**
+Service (combines containers from the same image)
+- **Machine**
+Physical docker hosts
+- **Instance**
+represents containers that were ever installed via Rancher. Better to query containers as nested resource, cuz there can be thousands of containers that were running before and still available to query via API. Removed containers are marked as 'removed' respectively
+- **Environment**
+In Rancher UI these are known as **Stack**, though in API they are **environments**. We're sticking to API resource name
+- **Host**
+These are hosts, with detailed information about docker installation and resources
 
 ### Setup
 
