@@ -5,7 +5,24 @@ describe Rancher::Api do
     expect(Rancher::Api::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  context '#configure' do
+    before do
+      subject.configure do |config|
+        config.url = 'test.test'
+      end
+    end
+
+    it 'should keep configuration instance' do
+      expect(subject.configuration.url).to eq('test.test')
+    end
+
+    context '#reset' do
+      before { subject.reset }
+
+      it 'should reset configuration instance' do
+        expect(subject.configuration.url).to be_nil
+      end
+    end
   end
+
 end

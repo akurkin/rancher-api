@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/projects/1a5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 09:10:49 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/schemas
+      Content-Length:
+      - '780'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"1a5","type":"project","links":{"self":"http://192.168.99.100:8080/v1/projects/1a5","certificates":"http://192.168.99.100:8080/v1/projects/1a5/certificates","containerEvents":"http://192.168.99.100:8080/v1/projects/1a5/containerevents","credentials":"http://192.168.99.100:8080/v1/projects/1a5/credentials","environments":"http://192.168.99.100:8080/v1/projects/1a5/environments","globalLoadBalancers":"http://192.168.99.100:8080/v1/projects/1a5/globalloadbalancers","hosts":"http://192.168.99.100:8080/v1/projects/1a5/hosts","images":"http://192.168.99.100:8080/v1/projects/1a5/images","instanceLinks":"http://192.168.99.100:8080/v1/projects/1a5/instancelinks","instances":"http://192.168.99.100:8080/v1/projects/1a5/instances","ipAddresses":"http://192.168.99.100:8080/v1/projects/1a5/ipaddresses","labels":"http://192.168.99.100:8080/v1/projects/1a5/labels","loadBalancerConfigListenerMaps":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancerconfiglistenermaps","loadBalancerConfigs":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancerconfigs","loadBalancerHostMaps":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancerhostmaps","loadBalancerListeners":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancerlisteners","loadBalancerTargets":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancertargets","loadBalancers":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancers","mounts":"http://192.168.99.100:8080/v1/projects/1a5/mounts","networks":"http://192.168.99.100:8080/v1/projects/1a5/networks","physicalHosts":"http://192.168.99.100:8080/v1/projects/1a5/physicalhosts","ports":"http://192.168.99.100:8080/v1/projects/1a5/ports","projectMembers":"http://192.168.99.100:8080/v1/projects/1a5/projectmembers","serviceConsumeMaps":"http://192.168.99.100:8080/v1/projects/1a5/serviceconsumemaps","serviceEvents":"http://192.168.99.100:8080/v1/projects/1a5/serviceevents","serviceExposeMaps":"http://192.168.99.100:8080/v1/projects/1a5/serviceexposemaps","services":"http://192.168.99.100:8080/v1/projects/1a5/services","snapshots":"http://192.168.99.100:8080/v1/projects/1a5/snapshots","storagePools":"http://192.168.99.100:8080/v1/projects/1a5/storagepools","volumes":"http://192.168.99.100:8080/v1/projects/1a5/volumes","accounts":"http://192.168.99.100:8080/v1/projects/1a5/accounts","apiKeys":"http://192.168.99.100:8080/v1/projects/1a5/apikeys","clusters":"http://192.168.99.100:8080/v1/projects/1a5/clusters","containerExecs":"http://192.168.99.100:8080/v1/projects/1a5/containerexecs","containers":"http://192.168.99.100:8080/v1/projects/1a5/containers","dnsServices":"http://192.168.99.100:8080/v1/projects/1a5/dnsservices","dockerBuilds":"http://192.168.99.100:8080/v1/projects/1a5/dockerbuilds","externalServices":"http://192.168.99.100:8080/v1/projects/1a5/externalservices","hostAccesses":"http://192.168.99.100:8080/v1/projects/1a5/hostaccesses","loadBalancerServices":"http://192.168.99.100:8080/v1/projects/1a5/loadbalancerservices","machines":"http://192.168.99.100:8080/v1/projects/1a5/machines","projects":"http://192.168.99.100:8080/v1/projects/1a5/projects","register":"http://192.168.99.100:8080/v1/projects/1a5/register","registrationTokens":"http://192.168.99.100:8080/v1/projects/1a5/registrationtokens","registries":"http://192.168.99.100:8080/v1/projects/1a5/registries","registryCredentials":"http://192.168.99.100:8080/v1/projects/1a5/registrycredentials","schemas":"http://192.168.99.100:8080/v1/projects/1a5/schemas","settings":"http://192.168.99.100:8080/v1/projects/1a5/settings","statsAccesses":"http://192.168.99.100:8080/v1/projects/1a5/statsaccesses","subscribe":"http://192.168.99.100:8080/v1/projects/1a5/subscribe","typeDocumentations":"http://192.168.99.100:8080/v1/projects/1a5/typedocumentations"},"actions":{},"name":"Default","state":"active","created":"2015-08-14T16:52:07Z","createdTS":1439571127000,"description":null,"kind":"project","members":null,"removed":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"uuid":"adminProject"}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 09:10:49 GMT
+recorded_with: VCR 2.9.3

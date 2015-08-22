@@ -18,8 +18,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     builder (3.2.2)
     byebug (6.0.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     eventmachine (1.0.8)
     faraday (0.9.1)
@@ -53,9 +56,14 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    safe_yaml (1.0.4)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    vcr (2.9.3)
+    webmock (1.21.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     websocket-driver (0.6.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -69,6 +77,8 @@ DEPENDENCIES
   rake (~> 10.0)
   rancher-api!
   rspec (~> 3.3.0)
+  vcr (= 2.9.3)
+  webmock (= 1.21.0)
 
 BUNDLED WITH
    1.10.5

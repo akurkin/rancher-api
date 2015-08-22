@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/services/1s55
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 13:33:42 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/schemas
+      Content-Length:
+      - '709'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"1s55","type":"service","links":{"self":"http://192.168.99.100:8080/v1/services/1s55","account":"http://192.168.99.100:8080/v1/services/1s55/account","consumedbyservices":"http://192.168.99.100:8080/v1/services/1s55/consumedbyservices","consumedservices":"http://192.168.99.100:8080/v1/services/1s55/consumedservices","environment":"http://192.168.99.100:8080/v1/services/1s55/environment","instances":"http://192.168.99.100:8080/v1/services/1s55/instances","loadBalancerConfigs":"http://192.168.99.100:8080/v1/services/1s55/loadbalancerconfigs","loadBalancerListeners":"http://192.168.99.100:8080/v1/services/1s55/loadbalancerlisteners","loadBalancers":"http://192.168.99.100:8080/v1/services/1s55/loadbalancers","serviceExposeMaps":"http://192.168.99.100:8080/v1/services/1s55/serviceexposemaps"},"actions":{"upgrade":"http://192.168.99.100:8080/v1/services/1s55/?action=upgrade","update":"http://192.168.99.100:8080/v1/services/1s55/?action=update","remove":"http://192.168.99.100:8080/v1/services/1s55/?action=remove","setservicelinks":"http://192.168.99.100:8080/v1/services/1s55/?action=setservicelinks","removeservicelink":"http://192.168.99.100:8080/v1/services/1s55/?action=removeservicelink","addservicelink":"http://192.168.99.100:8080/v1/services/1s55/?action=addservicelink","deactivate":"http://192.168.99.100:8080/v1/services/1s55/?action=deactivate"},"name":"web8cae","state":"active","accountId":"1a5","created":"2015-08-19T12:55:03Z","createdTS":1439988903000,"description":null,"environmentId":"1e6","kind":"service","launchConfig":{"command":["bundle","exec","unicorn","-p","3000"],"environment":{"RAILS_ENV":"production"},"imageUuid":"docker:hub.howtocookmicroservices.com:5000/quotes:8cae","labels":{"io.rancher.scheduler.affinity:host_label":"branch=master"},"logConfig":{},"networkMode":"managed","ports":["3000/tcp"],"privileged":false,"publishAllPorts":false,"readOnly":false,"startOnCreate":true,"stdinOpen":false,"tty":false},"removed":null,"scale":2,"secondaryLaunchConfigs":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"upgrade":null,"uuid":"f9bfa1df-75c2-4aff-b480-074e7a7adae5"}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 13:33:42 GMT
+recorded_with: VCR 2.9.3

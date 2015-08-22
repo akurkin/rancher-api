@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/environments/1e7/services
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 22 Aug 2015 09:23:04 GMT
+      Server:
+      - Jetty(9.2.11.v20150529)
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Api-Account-Id:
+      - 1a5
+      X-Api-Client-Ip:
+      - 91.187.66.37
+      X-Api-Schemas:
+      - http://192.168.99.100:8080/v1/schemas
+      Content-Length:
+      - '1112'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"collection","resourceType":"service","links":{"self":"http://192.168.99.100:8080/v1/environments/1e7/services"},"createTypes":{"dnsService":"http://192.168.99.100:8080/v1/dnsservices","externalService":"http://192.168.99.100:8080/v1/externalservices","loadBalancerService":"http://192.168.99.100:8080/v1/loadbalancerservices","service":"http://192.168.99.100:8080/v1/services"},"actions":{},"data":[{"id":"1s14","type":"service","links":{"self":"http://192.168.99.100:8080/v1/services/1s14","account":"http://192.168.99.100:8080/v1/services/1s14/account","consumedbyservices":"http://192.168.99.100:8080/v1/services/1s14/consumedbyservices","consumedservices":"http://192.168.99.100:8080/v1/services/1s14/consumedservices","environment":"http://192.168.99.100:8080/v1/services/1s14/environment","instances":"http://192.168.99.100:8080/v1/services/1s14/instances","loadBalancerConfigs":"http://192.168.99.100:8080/v1/services/1s14/loadbalancerconfigs","loadBalancerListeners":"http://192.168.99.100:8080/v1/services/1s14/loadbalancerlisteners","loadBalancers":"http://192.168.99.100:8080/v1/services/1s14/loadbalancers","serviceExposeMaps":"http://192.168.99.100:8080/v1/services/1s14/serviceexposemaps"},"actions":{"upgrade":"http://192.168.99.100:8080/v1/services/1s14/?action=upgrade","update":"http://192.168.99.100:8080/v1/services/1s14/?action=update","remove":"http://192.168.99.100:8080/v1/services/1s14/?action=remove","setservicelinks":"http://192.168.99.100:8080/v1/services/1s14/?action=setservicelinks","removeservicelink":"http://192.168.99.100:8080/v1/services/1s14/?action=removeservicelink","addservicelink":"http://192.168.99.100:8080/v1/services/1s14/?action=addservicelink","deactivate":"http://192.168.99.100:8080/v1/services/1s14/?action=deactivate"},"name":"registry","state":"active","accountId":"1a5","created":"2015-08-16T18:41:15Z","createdTS":1439750475000,"description":null,"environmentId":"1e7","kind":"service","launchConfig":{"dataVolumes":["/data:/var/lib/registry","/certs:/certs","/auth:/auth"],"environment":{"REGISTRY_AUTH_HTPASSWD_PATH":"/auth/htpasswd","REGISTRY_AUTH_HTPASSWD_REALM":"Registry
+        Realm","REGISTRY_HTTP_SECRET":"7d4eb05bc6255555ad2addf2cd4143ed","REGISTRY_HTTP_TLS_CERTIFICATE":"/certs/hub.howtocookmicroservices.com.crt","REGISTRY_HTTP_TLS_KEY":"/certs/hub.howtocookmicroservices.com.key","REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY":"/var/lib/registry"},"imageUuid":"docker:registry:2.1.1","logConfig":{},"networkMode":"managed","ports":["5000:5000/tcp"],"restartPolicy":{"name":"always"},"privileged":false,"publishAllPorts":false,"readOnly":false,"startOnCreate":true,"stdinOpen":false,"tty":false},"removed":null,"scale":1,"secondaryLaunchConfigs":null,"transitioning":"no","transitioningMessage":null,"transitioningProgress":null,"upgrade":null,"uuid":"dda7d872-0990-4547-a8ec-bc2a55ee96fe"}],"sortLinks":{"accountId":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=accountId","created":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=created","description":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=description","environmentId":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=environmentId","id":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=id","kind":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=kind","name":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=name","removeTime":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=removeTime","removed":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=removed","state":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=state","uuid":"http://192.168.99.100:8080/v1/environments/1e7/services?sort=uuid"},"pagination":{"first":null,"previous":null,"next":null,"limit":100,"total":null,"partial":false},"sort":null,"filters":{"accountId":null,"created":null,"description":null,"environmentId":null,"id":null,"kind":null,"name":null,"removeTime":null,"removed":null,"state":null,"uuid":null},"createDefaults":{"environmentId":"1e7"}}'
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 09:23:04 GMT
+recorded_with: VCR 2.9.3
