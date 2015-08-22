@@ -1,5 +1,10 @@
 # Rancher::Api
 
+[![Circle CI](https://circleci.com/gh/akurkin/rancher-api/tree/master.svg?style=svg)](https://circleci.com/gh/akurkin/rancher-api/tree/master)
+[![Code Climate](https://codeclimate.com/github/akurkin/rancher-api/badges/gpa.svg)](https://codeclimate.com/github/akurkin/rancher-api)
+[![Test Coverage](https://codeclimate.com/github/akurkin/rancher-api/badges/coverage.svg)](https://codeclimate.com/github/akurkin/rancher-api/coverage)
+
+
 Rancher::Api is a Ruby wrapper around [Rancher](http://rancher.com/) API built with [Her](http://www.her-rb.org/)
 
 Connect to Rancher and execute requests from your ruby scripts.
