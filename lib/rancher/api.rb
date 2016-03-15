@@ -11,6 +11,11 @@ module Rancher
       attr_writer :configuration
     end
 
+    def self.setup!
+      configure do |_x|
+      end
+    end
+
     def self.configuration
       @configuration ||= Configuration.new
     end

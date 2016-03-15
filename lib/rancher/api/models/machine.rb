@@ -4,6 +4,7 @@ module Rancher
   module Api
     class Machine
       DIGITAL_OCEAN = 'digitalocean'
+      VMWARE_VSPHERE = 'vmwarevsphere'
 
       include Her::Model
 
@@ -17,15 +18,15 @@ module Rancher
 
       def driver_config
         case driver
-        when DIGITAL_OCEAN
-          DriverConfig.new(attributes["#{DIGITAL_OCEAN}Config"])
+        when DIGITAL_OCEAN, VMWARE_VSPHERE
+          DriverConfig.new(attributes["#{driver}Config"])
         end
       end
 
       def driver_config=(dc)
         case driver
-        when DIGITAL_OCEAN
-          attributes["#{DIGITAL_OCEAN}Config"] = dc.attributes
+        when DIGITAL_OCEAN, VMWARE_VSPHERE
+          attributes["#{driver}Config"] = dc.attributes
         end
       end
     end
