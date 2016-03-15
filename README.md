@@ -38,7 +38,7 @@ Or install it yourself as:
 ## Rancher Version
 
 Tested with:
-Rancher v0.32.0
+Rancher v0.63.1
 
 ## Usage
 
@@ -61,6 +61,8 @@ These are hosts, with detailed information about docker installation and resourc
 
 ### Setup
 
+#### Using initializer
+
 ```ruby
 require 'rancher/api'
 
@@ -69,6 +71,18 @@ Rancher::Api.configure do |config|
   config.access_key = '8604A1FC8C108BAFB1E3'
   config.secret_key = '4BhuyyyAaaaaBbbbi7yaZzzAaa3y13pC6D7e569'
 end
+```
+
+#### Using environment variables
+
+You can configure `rancher-api` gem using `rancher-compose`-compatible environment variables:
+
+- RANCHER_URL
+- RANCHER_ACCESS_KEY
+- RANCHER_SECRET_KEY
+
+```ruby
+Rancher::Api.setup!
 ```
 
 ### Querying
@@ -82,6 +96,10 @@ machine = Rancher::Api::Machine.find('1ph1')
 
 ### Creating new machines
 Creating new machine using **Digital Ocean** driver:
+
+**NOTICE**: First specify driver, so that driver_config= accessor can correctly map config on the right attribute. I.e. for 'digitalocean' config attribute is 'digitaloceanConfig'.
+
+#### Digital Ocean
 
 ```ruby
 project = Rancher::Api::Project.all.to_a.first
@@ -98,7 +116,31 @@ new_machine.driver_config = Rancher::Api::Machine::DriverConfig.new(
 new_machine.save
 ```
 
-**NOTICE**: First specify driver, so that driver_config= accessor can correctly map config on the right attribute. I.e. for 'digitalocean' config attribute is 'digitaloceanConfig'.
+#### Vmware Vsphere
+
+```ruby
+project = Rancher::Api::Project.all.to_a.first
+
+new_machine = project.machines.build
+new_machine.name = 'api-test'
+new_machine.driver = Rancher::Api::Machine::VMWARE_VSPHERE
+new_machine.driver_config = Rancher::Api::Machine::DriverConfig.new(
+    boot2dockerUrl: nil,
+    cpuCount: '1',
+    datacenter: 'ha-dc',
+    datastore: 'prod',
+    diskSize: '10000',
+    memorySize: '1024',
+    network: 'prod',
+    password: 'holamundo',
+    pool: nil,
+    username: 'myuser',
+    vcenter: 'vcenter.happyops.com',
+    vcenterPort: nil
+)
+
+new_machine.save
+```
 
 
 ### Executing shell commands in containers
@@ -106,6 +148,7 @@ new_machine.save
 ```ruby
 container = Rancher::Api::Instance.find('1i382')
 puts container.execute('whoami').response
+puts container.execute(['bundle', 'exec', 'rake', 'db:create', 'db:migrate']).response
 ```
 
 ## Development
