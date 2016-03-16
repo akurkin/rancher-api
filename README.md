@@ -94,6 +94,33 @@ project = Rancher::Api::Project.all.to_a
 machine = Rancher::Api::Machine.find('1ph1')
 ```
 
+`rancher/api` gem uses ORM Her which hence inherently supports all of the features that Her has to offer. To get more details, review this page https://github.com/remiprev/her#fetching-data
+
+Some of the example queries include:
+
+```ruby
+project = Rancher::Api::Project.all.to_a.first
+
+project.machines
+
+# exact machine name
+project.machines.where(name: 'ciqa01')
+
+# machine's name not equal to
+project.machines.where(name_ne: 'qa')
+
+# machine's name starts with
+project.machines.where(name_prefix: 'qa')
+
+# other attributes
+
+# state not active
+project.machines.where(state_ne: 'active')
+
+# state activating
+project.machines.where(state: 'activating')
+```
+
 ### Creating new machines
 Creating new machine using **Digital Ocean** driver:
 
