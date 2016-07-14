@@ -1,3 +1,4 @@
+# These are 'Stacks' in the UI
 module Rancher
   module Api
     class Environment

@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'her', '~> 0.7.6'
+  spec.add_dependency 'her', '~> 0.8.1'
   spec.add_dependency 'faye-websocket'
   spec.add_dependency 'faraday_middleware'
 
@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'webmock', '1.21.0'
   spec.add_development_dependency 'vcr', '2.9.3'
+  spec.add_development_dependency 'awesome_print'
 end

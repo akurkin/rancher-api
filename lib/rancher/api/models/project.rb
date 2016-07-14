@@ -1,3 +1,4 @@
+# These are 'Environments' in the UI
 module Rancher
   module Api
     class Project
