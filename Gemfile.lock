@@ -19,6 +19,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    awesome_print (1.7.0)
     builder (3.2.2)
     byebug (6.0.0)
     coderay (1.1.0)
@@ -79,6 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bundler (~> 1.10)
   byebug
   pry

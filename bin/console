@@ -1,14 +1,17 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "rancher/api"
+require 'bundler/setup'
+require 'rancher/api'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-# require "pry"
-# Pry.start
+Rancher::Api.configure do |config|
+  config.url = RANCHER_URL
+  config.access_key = RANCHER_ACCESS_KEY
+  config.secret_key = RANCHER_SECRET_KEY
+end
 
-require "irb"
-IRB.start
+# (If you use this, don't forget to add pry to your Gemfile!)
+require 'pry'
+Pry.start
