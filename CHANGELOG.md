@@ -2,11 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0] - 2016-07-14
+
+- update dependencies to work with Rails 5
+- update README.md
 
 ## [0.3.8] - 2016-03-15
 
 - add Ipaddress class and association to Host class
-
 
 ## [0.3.7] - 2016-03-15
 
