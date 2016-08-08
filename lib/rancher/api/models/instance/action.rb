@@ -31,16 +31,16 @@ module Rancher
             ws = Faye::WebSocket::Client.new(uri.to_s)
 
             ws.on :message do |event|
-              self.response << Base64.decode64(event.data)
+              response << Base64.decode64(event.data)
             end
 
-            ws.on :close do |event|
+            ws.on :close do |_event|
               ws = nil
               EM.stop
             end
           end
 
-          self.response = self.response.join
+          self.response = response.join
 
           self
         end

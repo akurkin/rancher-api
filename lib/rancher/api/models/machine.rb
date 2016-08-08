@@ -3,10 +3,11 @@ require 'rancher/api/models/machine/driver_config'
 module Rancher
   module Api
     class Machine
-      DIGITAL_OCEAN = 'digitalocean'
-      VMWARE_VSPHERE = 'vmwarevsphere'
-
       include Her::Model
+      include Helpers::Model
+
+      DIGITAL_OCEAN = 'digitalocean'.freeze
+      VMWARE_VSPHERE = 'vmwarevsphere'.freeze
 
       attributes :name, :state, :amazonec2Config, :azureConfig, :description,
                  :digitaloceanConfig, :driver, :exoscaleConfig, :externalId,
@@ -15,6 +16,16 @@ module Rancher
                  :vmwarevcloudairConfig, :vmwarevsphereConfig
 
       has_many :hosts
+
+      class << self
+        def transitioning
+          all.select { |m| m.transitioning.eql?('yes') }
+        end
+
+        def active
+          where(state: 'active')
+        end
+      end
 
       def driver_config
         case driver

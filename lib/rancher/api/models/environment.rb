@@ -2,7 +2,8 @@
 module Rancher
   module Api
     class Environment
-      include ::Her::Model
+      include Her::Model
+      include Helpers::Model
 
       belongs_to :project
       has_many :services

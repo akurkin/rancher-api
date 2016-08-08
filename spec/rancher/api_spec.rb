@@ -24,5 +24,4 @@ describe Rancher::Api do
       end
     end
   end
-
 end

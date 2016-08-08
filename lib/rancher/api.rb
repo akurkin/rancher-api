@@ -4,6 +4,7 @@ require 'her'
 require 'rancher/api/configuration'
 require 'rancher/api/middlewares'
 require 'rancher/api/version'
+require 'rancher/api/logger'
 
 module Rancher
   module Api
@@ -27,7 +28,7 @@ module Rancher
     def self.configure
       yield(configuration)
 
-      Her::API.setup url: configuration.url do |c|
+      api = Her::API.setup url: configuration.url do |c|
         # Request
         c.request :json
 
@@ -37,12 +38,14 @@ module Rancher
         # Response
         c.use Rancher::Api::JsonParserMiddleware
         c.use Her::Middleware::DefaultParseJSON
+        c.use Faraday::Response::Logger, ActiveSupport::Logger.new(STDOUT) if configuration.verbose
 
         # Adapter
         c.use Faraday::Adapter::NetHttp
       end
 
       require 'rancher/api/models'
+      api
     end
   end
 end
