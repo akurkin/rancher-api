@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.5.0] - 2016-08-10
+
+- added few helpers:
+    - #wait_for_state - waiting (EM looping) until a desired state is reached
+    - #reload - reloading of resources
+    - #run - run actions (custom posts)
+
 ## [0.4.0] - 2016-07-14
 
 - update dependencies to work with Rails 5
