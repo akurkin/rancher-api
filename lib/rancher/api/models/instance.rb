@@ -7,6 +7,7 @@ module Rancher
     #
     class Instance
       include ::Her::Model
+      include Helpers::Model
 
       belongs_to :host
 

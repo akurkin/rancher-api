@@ -1,0 +1,70 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - '*.gemspec'
+    - 'Gemfile*'
+
+Metrics/ModuleLength:
+  Max: 108
+  Exclude:
+    - 'spec/lib/**/*'
+
+# Offense count: 33
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 120
+
+# Offense count: 6
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 18
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: with_first_parameter, with_fixed_indentation
+Style/AlignParameters:
+  Exclude:
+    - 'bin/rspec'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: always, conditionals
+Style/AndOr:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+# Offense count: 17
+Style/Documentation:
+  Enabled: false
+
+# Offense count: 6
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, UseHashRocketsWithSymbolValues.
+# SupportedStyles: ruby19, ruby19_no_mixed_keys, hash_rockets
+Style/HashSyntax:
+  Enabled: false
+
+# Offense count: 3
+# Cop supports --auto-correct.
+# Configuration parameters: SupportedStyles.
+# SupportedStyles: call, braces
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
+# SupportedStyles: aligned, indented
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
+# SupportedStyles: space, no_space
+Style/SpaceInsideBlockBraces:
+  Enabled: false

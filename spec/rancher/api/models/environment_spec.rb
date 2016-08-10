@@ -4,7 +4,7 @@ describe Rancher::Api::Environment do
   context '#all' do
     let(:index) do
       VCR.use_cassette('environments/index') do
-        subject.class.all.to_a.sort_by{|x| x.name}
+        subject.class.all.to_a.sort_by(&:name)
       end
     end
 

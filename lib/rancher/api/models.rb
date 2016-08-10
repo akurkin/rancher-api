@@ -1,3 +1,6 @@
+# helpers
+require 'rancher/api/helpers/model'
+# models
 require 'rancher/api/models/environment'
 require 'rancher/api/models/host'
 require 'rancher/api/models/instance'

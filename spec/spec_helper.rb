@@ -1,4 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'simplecov'
 
 require 'rancher/api'
 require 'webmock/rspec'
@@ -15,6 +16,5 @@ Rancher::Api.configure do |config|
   config.secret_key = 'YYY'
 end
 
-RSpec.configure do |config|
-
+RSpec.configure do |_config|
 end

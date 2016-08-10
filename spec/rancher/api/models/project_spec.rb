@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Rancher::Api::Project do
   let(:index) do
     VCR.use_cassette('projects/index') do
-      subject.class.all.to_a.sort_by{|x| x.name}
+      subject.class.all.to_a.sort_by(&:name)
     end
   end
 
@@ -47,7 +47,7 @@ describe Rancher::Api::Project do
         end
       end
 
-      it { expect(environments.size).to eq(2) } #hub and quotes
+      it { expect(environments.size).to eq(2) } # hub and quotes
       it { expect(environments.first).to be_instance_of(Rancher::Api::Environment) }
     end
 

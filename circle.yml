@@ -1,7 +1,7 @@
 machine:
   ruby:
-    version: 2.2.2
+    version: 2.2.5
 
 dependencies:
   pre:
-    - gem install bundler -v 1.10.5
+    - gem install bundler -v 1.12.5

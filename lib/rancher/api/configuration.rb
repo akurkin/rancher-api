@@ -4,6 +4,7 @@ module Rancher
       attr_accessor :url
       attr_accessor :access_key
       attr_accessor :secret_key
+      attr_accessor :verbose
 
       def initialize
         @url = "#{ENV['RANCHER_URL']}/v1/" if ENV['RANCHER_URL'].present?

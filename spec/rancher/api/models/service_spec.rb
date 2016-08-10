@@ -30,7 +30,7 @@ describe Rancher::Api::Service do
     it { expect(service.state).to eq('active') }
     it { expect(service.kind).to eq('service') }
     it { expect(service.type).to eq('service') }
-    it { expect(service.launchConfig).to include('environment' => {'MYSQL_ROOT_PASSWORD'=>'root'}) }
+    it { expect(service.launchConfig).to include('environment' => { 'MYSQL_ROOT_PASSWORD' => 'root' }) }
     it { expect(service.launchConfig).to include('imageUuid' => 'docker:mysql:latest') }
   end
 
@@ -60,7 +60,7 @@ describe Rancher::Api::Service do
     it { expect(service.state).to eq('active') }
     it { expect(service.kind).to eq('service') }
     it { expect(service.type).to eq('service') }
-    it { expect(service.launchConfig).to include('environment' => {'RAILS_ENV'=>'production'})}
+    it { expect(service.launchConfig).to include('environment' => { 'RAILS_ENV' => 'production' })}
     it { expect(service.launchConfig).to include('imageUuid' => /hub.howtocookmicroservices.com/)}
 
     it 'should have an array of command' do
@@ -69,10 +69,9 @@ describe Rancher::Api::Service do
 
     it 'should have labels' do
       expect(service.launchConfig).to include(
-        'labels' => {'io.rancher.scheduler.affinity:host_label'=>'branch=master'}
+        'labels' => { 'io.rancher.scheduler.affinity:host_label' => 'branch=master' }
       )
     end
-
   end
 
   context 'relationships' do
@@ -93,5 +92,4 @@ describe Rancher::Api::Service do
       it { expect(instances.first).to be_instance_of(Rancher::Api::Instance) }
     end
   end
-
 end

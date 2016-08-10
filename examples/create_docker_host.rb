@@ -5,7 +5,7 @@
 require 'rancher/api'
 
 BRANCH = ENV['CIRCLE_BRANCH']
-DIGITAL_OCEAN_ACCESS_TOKEN = 'xxx'
+DIGITAL_OCEAN_ACCESS_TOKEN = 'xxx'.freeze
 
 Rancher::Api.configure do |config|
   config.url = "http://#{ENV['RANCHER_HOST']}/v1/"
