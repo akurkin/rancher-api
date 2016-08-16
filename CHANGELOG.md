@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.5.1] - 2016-08-16
+
+- bugfix in model helpers #handle_response when handling collections
+
 ## [0.5.0] - 2016-08-10
 
 - added few helpers:
