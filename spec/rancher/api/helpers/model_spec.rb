@@ -32,7 +32,7 @@ module Rancher
         describe '#run' do
           let(:test_url) { 'http://example.com/?action=test' }
           context 'action is available' do
-            let(:response) { double }
+            let(:response) { dummy }
             subject { dummy.run(:test) }
 
             it 'sends a POST request' do
@@ -56,6 +56,41 @@ module Rancher
             it 'raises a RancherActionNotAvailableError' do
               expect(dummy).to receive(:actions).and_return('test' => test_url).twice
               expect { dummy.run(:bogus)}.to raise_error(Model::RancherActionNotAvailableError)
+            end
+          end
+        end
+
+        describe '#handle_response' do
+          subject { dummy.handle_response(response) }
+
+          context 'response is a Her::Collection' do
+            let(:response) { Her::Collection.new }
+
+            it 'returns the collection' do
+              expect(subject).to eq(response)
+            end
+          end
+
+          context 'response is a Her::Model' do
+            let(:response) { dummy }
+
+            it 'returns the response' do
+              expect(dummy).to receive(:type).and_return('dummy')
+              expect(subject).to eq(response)
+            end
+
+            context 'response.type is "error"' do
+              it 'raises a RancherModelError' do
+                expect(dummy).to receive(:type).and_return('error')
+                expect { subject }.to raise_error(Model::RancherModelError)
+              end
+            end
+
+            context 'response is nil' do
+              it 'raises a RancherModelError' do
+                expect { dummy.handle_response(nil) }.to raise_error(Model::RancherModelError)
+
+              end
             end
           end
         end

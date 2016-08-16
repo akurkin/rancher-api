@@ -25,7 +25,15 @@ module Rancher
         end
 
         def handle_response(response)
-          raise RancherModelError, response.inspect if response.type.eql?('error')
+          case response
+          when Her::Collection
+            response
+          when Her::Model
+            raise RancherModelError, response.inspect if response.type.eql?('error')
+            response
+          else
+            raise RancherModelError, response.inspect
+          end
         end
 
         def wait_for_state(desired_state)
