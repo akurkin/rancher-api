@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.5.2] - 2016-08-22
+
+- adding models for registry and registrycredentials
+
 ## [0.5.1] - 2016-08-16
 
 - bugfix in model helpers #handle_response when handling collections
