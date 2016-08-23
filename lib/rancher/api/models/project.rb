@@ -8,6 +8,7 @@ module Rancher
       has_many :machines
       has_many :environments
       has_many :services
+      has_many :apikeys
 
       class << self
         def find_by_name(name:)
