@@ -1,13 +1,14 @@
 # helpers
 require 'rancher/api/helpers/model'
 # models
+require 'rancher/api/models/apikey'
 require 'rancher/api/models/environment'
-require 'rancher/api/models/api_key'
 require 'rancher/api/models/host'
 require 'rancher/api/models/instance'
+require 'rancher/api/models/ipaddress'
 require 'rancher/api/models/machine'
 require 'rancher/api/models/project'
 require 'rancher/api/models/service'
-require 'rancher/api/models/ipaddress'
+require 'rancher/api/models/registrationtoken'
 require 'rancher/api/models/registry'
 require 'rancher/api/models/registrycredential'
