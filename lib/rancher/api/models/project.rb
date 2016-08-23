@@ -9,8 +9,9 @@ module Rancher
       has_many :environments
       has_many :services
       has_many :apikeys
-      has_many :registries
       has_many :registrationtokens
+      has_many :registries
+      has_many :registrycredentials
 
       class << self
         def find_by_name(name:)
