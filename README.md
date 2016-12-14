@@ -38,7 +38,8 @@ Or install it yourself as:
 ## Rancher Version
 
 Tested with:
-Rancher v1.1.0
+gem < 0.6.0 -> Rancher v1.1.0
+gem >= 0.6.0 -> Rancher v1.2.0
 
 ## Usage
 
