@@ -9,7 +9,7 @@ describe Rancher::Api::Service do
 
   let(:index) do
     VCR.use_cassette('services/index') do
-      project.services.to_a
+      Rancher::Api::Service.all.to_a
     end
   end
 

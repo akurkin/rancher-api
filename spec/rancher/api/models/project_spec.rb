@@ -43,7 +43,7 @@ describe Rancher::Api::Project do
     context '#environments' do
       let(:environments) do
         VCR.use_cassette('projects/environments') do
-          project.environments.to_a
+          Rancher::Api::Environment.all.to_a
         end
       end
 

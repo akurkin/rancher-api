@@ -76,6 +76,10 @@ end
 
 #### Using environment variables
 
+IMPORTANT NOTE: Use environment's API keys. This is done for compatibility with rancher-compose to utilize same keys
+
+    By default, the API keys under the API section are account API keys and you need to create an environment API key, which is in the Advanced Options.
+
 You can configure `rancher-api` gem using `rancher-compose`-compatible environment variables:
 
 - RANCHER_URL
