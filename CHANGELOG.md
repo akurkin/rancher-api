@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.6.0] - 2016-12-14
+
+### Changed
+
+- update `Rancher::Api::Machine` model to use collection path that has `project_id` as part of url, i.e. `/v1/projects/1a5/machines/1ph1` instead of `/v1/machines/1ph1`. It seems like Rancher 1.2 forces you to use full path instead of supplying `project_id` as parameter
+
+
 ## [0.5.2] - 2016-08-22
 
 - adding models for registry and registrycredentials

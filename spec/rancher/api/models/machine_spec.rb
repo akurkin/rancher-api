@@ -37,7 +37,7 @@ module Rancher
       describe '#find' do
         let(:machine) do
           VCR.use_cassette('machines/1ph1') do
-            Machine.find('1ph1')
+            Machine.find('1ph1', _project_id: project.id)
           end
         end
 

@@ -6,6 +6,7 @@ module Rancher
       include Helpers::Model
 
       has_many :machines
+      has_many :hosts
       has_many :environments
       has_many :services
 

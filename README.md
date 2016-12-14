@@ -91,7 +91,7 @@ Now, you're able to query entities like this:
 
 ```ruby
 project = Rancher::Api::Project.all.to_a
-machine = Rancher::Api::Machine.find('1ph1')
+machine = Rancher::Api::Machine.find('1ph1', _project_id: project.id)
 ```
 
 `rancher/api` gem uses ORM Her which hence inherently supports all of the features that Her has to offer. To get more details, review this page https://github.com/remiprev/her#fetching-data
