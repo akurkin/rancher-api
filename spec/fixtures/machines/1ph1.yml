@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://XXX:YYY@192.168.99.100:8080/v1/machines/1ph1
+    uri: http://XXX:YYY@192.168.99.100:8080/v1/projects/1a5/machines/1ph1
     body:
       encoding: US-ASCII
       string: ''
