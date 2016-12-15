@@ -11,7 +11,7 @@ VCR.configure do |c|
 end
 
 Rancher::Api.configure do |config|
-  config.url = 'http://192.168.99.100:8080/v1/'
+  config.url = 'http://192.168.99.100:8080/v1/projects/1a5'
   config.access_key = 'XXX'
   config.secret_key = 'YYY'
 end

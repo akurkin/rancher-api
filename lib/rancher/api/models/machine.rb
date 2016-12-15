@@ -9,8 +9,6 @@ module Rancher
       DIGITAL_OCEAN = 'digitalocean'.freeze
       VMWARE_VSPHERE = 'vmwarevsphere'.freeze
 
-      collection_path 'projects/:project_id/machines'
-
       attributes :name, :state, :amazonec2Config, :azureConfig, :description,
                  :digitaloceanConfig, :driver, :exoscaleConfig, :externalId,
                  :labels, :openstackConfig, :packetConfig, :rackspaceConfig,
