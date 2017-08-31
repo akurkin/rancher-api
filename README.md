@@ -38,7 +38,8 @@ Or install it yourself as:
 ## Rancher Version
 
 Tested with:
-Rancher v1.1.0
+gem < 0.6.0 -> Rancher v1.1.0
+gem >= 0.6.0 -> Rancher v1.2.0
 
 ## Usage
 
@@ -75,6 +76,10 @@ end
 
 #### Using environment variables
 
+IMPORTANT NOTE: Use environment's API keys. This is done for compatibility with rancher-compose to utilize same keys
+
+    By default, the API keys under the API section are account API keys and you need to create an environment API key, which is in the Advanced Options.
+
 You can configure `rancher-api` gem using `rancher-compose`-compatible environment variables:
 
 - RANCHER_URL
@@ -91,7 +96,7 @@ Now, you're able to query entities like this:
 
 ```ruby
 project = Rancher::Api::Project.all.to_a
-machine = Rancher::Api::Machine.find('1ph1')
+machine = Rancher::Api::Machine.find('1ph1', _project_id: project.id)
 ```
 
 `rancher/api` gem uses ORM Her which hence inherently supports all of the features that Her has to offer. To get more details, review this page https://github.com/remiprev/her#fetching-data

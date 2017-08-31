@@ -1,5 +1,5 @@
 module Rancher
   module Api
-    VERSION = '0.5.3'.freeze
+    VERSION = '0.7.0'.freeze
   end
 end

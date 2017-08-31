@@ -56,7 +56,7 @@ unless machine
 
       sleep wait_time
 
-      machine = Rancher::Api::Machine.find(machine.id)
+      machine = Rancher::Api::Machine.find(machine.id, _project_id: project.id)
     end
   end
 end
