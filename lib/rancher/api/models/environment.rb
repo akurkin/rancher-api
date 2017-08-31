@@ -7,7 +7,6 @@ module Rancher
 
       belongs_to :project
       has_many :services
-      collection_path "projects/:project_id/environments"
     end
   end
 end
