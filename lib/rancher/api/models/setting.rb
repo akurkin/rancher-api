@@ -1,6 +1,6 @@
 module Rancher
   module Api
-    class Apikey
+    class Setting
       include Her::Model
       include Helpers::Model
     end
