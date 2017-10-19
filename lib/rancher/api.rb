@@ -41,7 +41,7 @@ module Rancher
         c.use Faraday::Response::Logger, ActiveSupport::Logger.new(STDOUT) if configuration.verbose
 
         # Adapter
-        c.use Faraday::Adapter::NetHttp
+        c.use Faraday::Adapter::NetHttpPersistent
       end
 
       require 'rancher/api/models'
