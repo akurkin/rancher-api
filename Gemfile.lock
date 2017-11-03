@@ -109,7 +109,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    vcr (2.9.3)
+    vcr (3.0.3)
     webmock (1.21.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -131,7 +131,7 @@ DEPENDENCIES
   rancher-api!
   rspec (~> 3.3.0)
   simplecov
-  vcr (= 2.9.3)
+  vcr (= 3.0.3)
   webmock (= 1.21.0)
 
 BUNDLED WITH
