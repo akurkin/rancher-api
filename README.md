@@ -47,18 +47,28 @@ Configure Rancher::Api first by providing url, access and secret keys:
 
 ### Classes
 
+- **Machinedriver**
+(http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/machineDriver/)
+- **Projecttemplate** (http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/project/)
+- **Registrationtoken** (http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/registrationToken/)
 - **Project**
 Top level object that represents "Environment" in Rancher UI
+http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/project/
 - **Service**
 Service (combines containers from the same image)
+http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/service/
 - **Machine**
 Physical docker hosts
+http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/machine/
 - **Instance**
-represents containers that were ever installed via Rancher. Better to query containers as nested resource, cuz there can be thousands of containers that were running before and still available to query via API. Removed containers are marked as 'removed' respectively
+represents containers that were ever installed via Rancher. Better to query containers as nested resource, cuz there can be thousands of containers that were running before and still available to query via API. Removed containers are marked as 'removed' respectively.
+
 - **Environment**
-In Rancher UI these are known as **Stack**, though in API they are **environments**. We're sticking to API resource name
+In Rancher UI these are known as **Stack**, though in API they are **environments**. We're sticking to API resource name.
+http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/stack/
 - **Host**
-These are hosts, with detailed information about docker installation and resources
+These are hosts, with detailed information about docker installation and resources.
+http://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-resources/host/
 
 ### Setup
 
@@ -102,6 +112,311 @@ machine = Rancher::Api::Machine.find('1ph1', _project_id: project.id)
 `rancher/api` gem uses ORM Her which hence inherently supports all of the features that Her has to offer. To get more details, review this page https://github.com/remiprev/her#fetching-data
 
 Some of the example queries include:
+## List all ProjectTemplate
+```ruby
+project_templates = ::Rancher::Api::Projecttemplate.all
+ap project_templates.map do |project_template|
+  {
+           name:project_template.name,
+    description:project_template.description,
+             id:project_template.id,
+          state:project_template.state
+  }
+end
+#=>
+[
+    [0] {
+               :name => "Mesos",
+        :description => "Default Mesos template",
+                 :id => "1pt1",
+              :state => "active"
+    },
+    [1] {
+               :name => "Kubernetes",
+        :description => "Default Kubernetes template",
+                 :id => "1pt2",
+              :state => "active"
+    },
+    [2] {
+               :name => "Windows",
+        :description => "Experimental Windows template",
+                 :id => "1pt3",
+              :state => "active"
+    },
+    [3] {
+               :name => "Swarm",
+        :description => "Default Swarm template",
+                 :id => "1pt4",
+              :state => "active"
+    },
+    [4] {
+               :name => "Cattle",
+        :description => "Default Cattle template",
+                 :id => "1pt5",
+              :state => "active"
+    }
+]
+```
+## Find the ProjectTemplate named Kubernetes
+```ruby
+kubernetes_template = ::Rancher::Api::Projecttemplate.where(name:'Kubernetes').first
+ap kubernetes_template
+#=>
+#<Rancher::Api::Projecttemplate(projecttemplates/1pt2)
+  type="projectTemplate"
+  links={
+    "self"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/projecttemplates/1pt2",
+    "accounts"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/projecttemplates/1pt2/accounts"
+  }
+  actions={
+    "remove"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/projecttemplates/1pt2/?action=remove"
+  }
+  baseType="projectTemplate"
+  name="Kubernetes"
+  state="active"
+  accountId=nil
+  created="2017-11-20T21:39:09Z"
+  createdTS=1511213949000
+  data={
+    "fields"=>{
+      "stacks"=>[
+        {
+          "name"=>"kubernetes",
+          "templateId"=>"library:infra*k8s"
+        },{
+          "name"=>"network-services",
+          "templateId"=>"library:infra*network-services"
+        },{
+          "name"=>"ipsec",
+          "templateId"=>"library:infra*ipsec"
+        },{
+          "name"=>"healthcheck",
+          "templateId"=>"library:infra*healthcheck"
+        }
+      ]
+    }
+  }
+  description="Default Kubernetes template"
+  externalId="catalog://library:project*kubernetes:0"
+  isPublic=true
+  kind="projectTemplate"
+  removeTime=nil
+  removed=nil
+  stacks=[
+    {
+      "type"=>"catalogTemplate",
+      "name"=>"kubernetes",
+      "templateId"=>"library:infra*k8s"
+    },{
+      "type"=>"catalogTemplate",
+      "name"=>"network-services",
+      "templateId"=>"library:infra*network-services"
+    },{
+      "type"=>"catalogTemplate",
+      "name"=>"ipsec",
+      "templateId"=>"library:infra*ipsec"
+    },{
+      "type"=>"catalogTemplate",
+      "name"=>"healthcheck",
+      "templateId"=>"library:infra*healthcheck"
+    }
+  ]
+  transitioning="no"
+  transitioningMessage=nil
+  transitioningProgress=nil
+  uuid="e0919a00-0349-4775-8382-08a64d6e268c"
+  id="1pt2"
+>
+```
+## Create a new project from the Kubernetes ProjectTemplate
+```ruby
+jupytercloud_project = ::Rancher::Api::Project.create({
+  name:'JupyterCloud',
+  projectTemplateId:kubernetes_template.id
+})
+ap jupytercloud_project
+#=>
+```
+## List all machine drivers
+```ruby
+machine_drivers = ::Rancher::Api::Machinedriver.all
+ap machine_drivers:machine_drivers.map do |machine_driver|
+  {
+       id:machine_driver.id,
+     name:machine_driver.name,
+    state:machine_driver.state
+  }
+end
+
+[
+    [ 0] {
+           :id => "1md1",
+         :name => "packet",
+        :state => "active"
+    },
+    [ 1] {
+           :id => "1md2",
+         :name => "amazonec2",
+        :state => "inactive"
+    },
+    [ 2] {
+           :id => "1md3",
+         :name => "azure",
+        :state => "inactive"
+    },
+    [ 3] {
+           :id => "1md4",
+         :name => "digitalocean",
+        :state => "inactive"
+    },
+    [ 4] {
+           :id => "1md5",
+         :name => "ubiquity",
+        :state => "inactive"
+    },
+    [ 5] {
+           :id => "1md6",
+         :name => "exoscale",
+        :state => "inactive"
+    },
+    [ 6] {
+           :id => "1md7",
+         :name => "generic",
+        :state => "inactive"
+    },
+    [ 7] {
+           :id => "1md8",
+         :name => "google",
+        :state => "inactive"
+    },
+    [ 8] {
+           :id => "1md9",
+         :name => "openstack",
+        :state => "active"
+    },
+    [ 9] {
+           :id => "1md10",
+         :name => "rackspace",
+        :state => "inactive"
+    },
+    [10] {
+           :id => "1md11",
+         :name => "softlayer",
+        :state => "inactive"
+    },
+    [11] {
+           :id => "1md12",
+         :name => "vmwarevcloudair",
+        :state => "inactive"
+    },
+    [12] {
+           :id => "1md13",
+         :name => "vmwarevsphere",
+        :state => "inactive"
+    },
+    [13] {
+           :id => "1md14",
+         :name => "opennebula",
+        :state => "inactive"
+    }
+]
+
+```
+## Find the MachineDriver named **openstack**
+```ruby
+driver_openstack = ::Rancher::Api::Machinedriver.where(name:'openstack').first
+ap driver_openstack
+#=>
+#<Rancher::Api::Machinedriver(machinedrivers/1md9)
+  type="machineDriver"
+  links={
+    "self"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9"
+  }
+  actions={
+    "activate"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9/?action=activate", "update"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9/?action=update",
+    "remove"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9/?action=remove",
+  }
+  baseType="machineDriver"
+  name="openstack"
+  state="inactive"
+  activateOnCreate=false
+  builtin=true
+  checksum=nil
+  created="2017-11-20T21:38:55Z"
+  createdTS=1511213935000
+  data={
+    "fields"=>{
+      "schemaVersion"=>"https://github.com/rancher/machine-package/releases/download/v0.10.0-pre1/docker-machine.tar.gz",
+      "url"=>"local://",
+      "builtin"=>true,
+      "defaultActive"=>false
+    }
+  }
+  defaultActive=false
+  description=nil
+  externalId=nil
+  kind="machineDriver"
+  removeTime=nil
+  removed=nil
+  transitioning="no"
+  transitioningMessage=nil
+  transitioningProgress=nil
+  uiUrl=nil
+  url="local://"
+  uuid="129f7769-13ba-42d5-9ca1-98a2dd712340"
+  id="1md9"
+>
+```
+## Activate the OpenStack machine driver
+```ruby
+driver_openstack = ::Rancher::Api::Machinedriver.where(name:'openstack').first
+ap ::Rancher::Api::Action.for_resource(:machinedriver)
+                         .with_id(driver_openstack.id)
+                         .action(:activate)
+                         .create
+#=>
+#<Rancher::Api::Action(machinedriver/1md9/?action=activate/1md9)
+  resource_name=:machinedriver
+  resource_id="1md9"
+  action=:activate
+  data={
+    "fields"=>{
+      "schemaVersion"=>"https://github.com/rancher/machine-package/releases/download/v0.10.0-pre1/docker-machine.tar.gz",
+      "url"=>"local://",
+      "builtin"=>true,
+      "defaultActive"=>false
+    }
+  }
+  id="1md9"
+  type="machineDriver"
+  links={
+    "self"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9"
+  }
+  actions={
+    "error"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9/?action=error", "remove"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9/?action=remove", "deactivate"=>"http://xxx.yyy.zzz.ttt:8080/v2-beta/machinedrivers/1md9/?action=deactivate"
+  }
+  baseType="machineDriver"
+  name="openstack"
+  state="activating"
+  activateOnCreate=false
+  builtin=true
+  checksum=nil
+  created="2017-11-20T21:38:55Z"
+  createdTS=1511213935000
+  defaultActive=false
+  description=nil
+  externalId=nil
+  kind="machineDriver"
+  removeTime=nil
+  removed=nil
+  transitioning="yes"
+  transitioningMessage="In Progress"
+  transitioningProgress=nil
+  uiUrl=nil
+  url="local://"
+  uuid="129f7769-13ba-42d5-9ca1-98a2dd712340"
+>
+```
 
 ```ruby
 project = Rancher::Api::Project.all.to_a.first
@@ -201,4 +516,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/akurki
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
