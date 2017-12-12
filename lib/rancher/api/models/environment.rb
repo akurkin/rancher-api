@@ -7,6 +7,7 @@ module Rancher
 
       belongs_to :project
       has_many :services
+      has_many :hosts
     end
   end
 end
