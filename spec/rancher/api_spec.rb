@@ -8,12 +8,12 @@ describe Rancher::Api do
   context '#configure' do
     before do
       subject.configure do |config|
-        config.url = 'test.test'
+        config.url = 'http://test.test'
       end
     end
 
     it 'should keep configuration instance' do
-      expect(subject.configuration.url).to eq('test.test')
+      expect(subject.configuration.url).to eq('http://test.test')
     end
 
     context '#reset' do

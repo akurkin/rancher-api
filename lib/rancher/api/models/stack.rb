@@ -1,13 +1,11 @@
-# These are 'Stacks' in the UI
 module Rancher
   module Api
-    class Environment
+    class Stack
       include Her::Model
       include Helpers::Model
 
-      belongs_to :project
+      belongs_to :project, foreign_key: :accountId
       has_many :services
-      has_many :hosts
     end
   end
 end

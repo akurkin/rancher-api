@@ -9,6 +9,7 @@ module Rancher
       has_many :hosts
       has_many :environments
       has_many :services
+      has_many :stacks
 
       class << self
         def find_by_name(name:)
